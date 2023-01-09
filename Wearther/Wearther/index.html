@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wearther</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"
+        integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div>
+                <form action="" class="search" id="search">
+                    <input type="text" id="query" placeholder="Search..." />
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+                <div class="location">
+                    <div class="location-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="location-text">
+                        <p id="location">Location</p>
+                    </div>
+                </div>
+                <div class="weather-icon">
+                    <img src="icons/sun.png" alt="" id="icon" />
+                </div>
+                <div class="temprature">
+                    <h1 id="temp">0</h1>
+                    <span class="temp-unit">°C</span>
+                </div>
+                <div class="date-time">
+                    <p id="date-time">Monday, 12:00</p>
+                </div>
+                <div class="divider"></div>
+                <div class="condition-rain">
+                    <div class="condition">
+                        <i class="fa-solid fa-cloud"></i>
+                        <div class="condition" id="condition">Condition</div>
+                    </div>
+                    <div class="rain">
+                        <i class="fa-solid fa-droplet"></i>
+                        <div class="rain" id="rain">Rain: 20%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <nav>
+                <ul class="options">
+                    <button class="hourly">Today</button>
+                    <button class="week active">Week</button>
+                    <button class="wear">Wear</button>
+                </ul>
+                <div class="logo">
+                    <img src="/images/logo.svg" alt="" />
+                </div>
+                <ul class="options units">
+                    <button class="celcius active">°C</button>
+                    <button class="fahrenheit">°F</button>
+                </ul>
+            </nav>
+            <div class="cards" id="weather-cards">
+                <div class="card">
+                    <h2 class="day-name">Monday</h2>
+                    <div class="card-icon">
+                        <img src="icons/cloudy.png" alt="" />
+                    </div>
+                    <div class="day-temp">
+                        <h2 class="temp">32</h2>
+                        <span class="temp-unit">°C</span>
+                    </div>
+                </div>
+            </div>
+            <div class="wearr" id="wear-cards">
+                <div class="cardss">
+                    <div class="head-card">
+                        <h4 class="box-heading">Head</h4>
+                        <div class="image-box">
+                            <img id="head" src="images/beyaz.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="cardss">
+                    <div class="acs-card">
+                        <h4 class="box-heading">Accessory</h4>
+                        <div class="image-box">
+                            <img id="accessory" src="images/beyaz.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="cardss">
+                    <div class="jacket-card">
+                        <h4 class="box-heading">Jacket</h4>
+                        <div class="image-box">
+                            <img id="jacket" src="images/beyaz.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="cardss">
+                    <div class="top-card">
+                        <h4 class="box-heading">Top</h4>
+                        <div class="image-box">
+                            <img id="top" src="images/beyaz.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="cardss">
+                    <div class="hand-card">
+                        <h4 class="box-heading">Hand</h4>
+                        <div class="image-box">
+                            <img id="hand" src="images/beyaz.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="cardss">
+                    <div class="bottom-card">
+                        <h4 class="box-heading">Bottom</h4>
+                        <div class="image-box">
+                            <img id="bottom" src="images/beyaz.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="cardss">
+                    <div class="foot-card">
+                        <h4 class="box-heading">Foot</h4>
+                        <div class="image-box">
+                            <img id="foot" src="images/beyaz.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="gen">
+                    <form name="gender-form">
+                        <label>
+                            <input type="radio" name="gender" value="Male" checked>
+                            <span>Male</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="Female">
+                            <span>Female</span>
+                        </label>
+                    </form>
+                    <br>
+                </div>                              
+                <div class="btn">
+                    <button class="rndm" onclick="getClothes()">Change Combine</button>
+                </div>
+                <div class="buy-inf">
+                    <div class="buy-button">
+                        <button class="buy" onclick="openAllUrlsNewTab()">Buy Combine</button>
+                    </div>
+                    <div class="price">
+                        <h4>Total = 0TL</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="highlights">
+                <h2 class="heading">Today's Highlights</h2>
+                <div class="cards">
+                    <div class="card2">
+                        <h4 class="card-heading">Feels Like</h4>
+                        <div class="content">
+                            <p class="feels-like-status">Freezing</p>
+                            <p class="feels-like">0</p>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <h4 class="card-heading">Wind Status</h4>
+                        <div class="content">
+                            <p class="wind-speed">0</p>
+                            <p class="wind-status">Calm</p>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <h4 class="card-heading">Sunrise & Sunset</h4>
+                        <div class="content">
+                            <p class="sun-rise">0</p>
+                            <p class="sun-set">0</p>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <h4 class="card-heading">Humidity</h4>
+                        <div class="content">
+                            <p class="humidity">0</p>
+                            <p class="humidity-status">Low</p>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <h4 class="card-heading">Visibility</h4>
+                        <div class="content">
+                            <p class="visibility">0</p>
+                            <p class="visibility-status">Dense Fog</p>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <h4 class="card-heading">Air Quality</h4>
+                        <div class="content">
+                            <p class="air-quality">0</p>
+                            <p class="air-quality-status">Good</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
